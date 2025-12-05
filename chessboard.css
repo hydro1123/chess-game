@@ -1,0 +1,77 @@
+/* chessboard.css */
+#board {
+    background: #f0d9b5;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 2px solid #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    width: 400px;
+    height: 400px;
+    user-select: none;
+  }
+  
+  #board div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+  }
+  
+  #board div[dragging] {
+    cursor: grabbing;
+  }
+  
+  #board div:nth-child(16n+1),
+  #board div:nth-child(16n+3),
+  #board div:nth-child(16n+5),
+  #board div:nth-child(16n+7),
+  #board div:nth-child(16n+10),
+  #board div:nth-child(16n+12),
+  #board div:nth-child(16n+14),
+  #board div:nth-child(16n+16) {
+    background-color: #b58863;
+  }
+  
+  .moves-display {
+    background: #f5f5f5;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: monospace;
+    height: 360px;
+    overflow-y: auto;
+    user-select: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .move-entry {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  
+  #game-message {
+    position: fixed;
+    top: 50%;s
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 100;
+    display: none;
+    text-align: center;
+  }
+  
+  #game-message button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
